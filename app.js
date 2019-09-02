@@ -4,20 +4,14 @@ new Vue({
   data() {
     return {
       name: '米斯特吴',
-      wechat: '27732357'
+      wechat: '27732357',
+      website: 'https://www.baidu.com',
+      websiteTag: '<a href="https://www.taobao.com">taobao</a>'
     };
   },
   methods: {
-    // greet: function() {
-    //   return 'Good night ' + this.name;
-    // }
-
     greet(time) {
-      // return 'Good night ' + this.name;
       return `Good ${time} ${this.name}`;
-    },
-    haveLunch() {
-      return `吃过午饭了吗?`;
     }
   }
 });
