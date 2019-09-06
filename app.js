@@ -3,15 +3,22 @@ new Vue({
   el: '#vue-app', // element
   data() {
     return {
-      name: '米斯特吴',
-      wechat: '27732357',
-      website: 'https://www.baidu.com',
-      websiteTag: '<a href="https://www.taobao.com">taobao</a>'
+      age: 30,
+      x: 0,
+      y: 0
     };
   },
   methods: {
-    greet(time) {
-      return `Good ${time} ${this.name}`;
+    add(inc) {
+      this.age += inc;
+    },
+    subtract(dec) {
+      this.age -= dec;
+    },
+    updateXY(event) {
+      // console.log(event);
+      this.x = event.offsetX;
+      this.y = event.offsetY;
     }
   }
 });

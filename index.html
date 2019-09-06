@@ -5,20 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="styles.css" />
     <title>Vue CDN</title>
   </head>
   <body>
     <div id="vue-app">
-      <h1>Data binding</h1>
-      <h1>Hello, {{ name }}</h1>
-      <p>你的微信是: {{ wechat }}</p>
-      <p>
-        <a :href="website">baidu</a>
-      </p>
-      <!-- <p>{{ websiteTag }}</p> -->
-      <p v-html="websiteTag"></p>
+      <h1>Events</h1>
+      <!-- <button @click="age++">add a year</button>
+      <button v-on:click="age--">subtract a year</button> -->
+      <button @click="add(1)">add a year</button>
+      <button v-on:click="subtract(1)">subtract a year</button>
+      <button @dblclick="add(10)">add 10 year</button>
+      <button v-on:dblclick="subtract(10)">subtract 10 year</button>
+      <p>我的年龄是: {{ age }}</p>
 
-      <p><input type="text" v-bind:value="name" /></p>
+      <!-- mousemove event -->
+      <div id="canvas" v-on:mousemove="updateXY">{{ x }} , {{ y }}</div>
     </div>
   </body>
   <script src="app.js"></script>
