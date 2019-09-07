@@ -10,12 +10,14 @@
   </head>
   <body>
     <div id="vue-app">
-      <h1>Events</h1>
+      <h1>双向数据绑定 input / select / textarea</h1>
       <label>姓名</label>
-      <input type="text" v-on:keydown.enter="logName" />
+      <input type="text" v-model.lazy="name" />
+      <span>{{ name }}</span>
 
       <label>年龄</label>
-      <input type="text" v-on:keyup.alt.enter="logAge" />
+      <input type="text" v-model="age" />
+      <span>{{ age }}</span>
     </div>
   </body>
   <script src="app.js"></script>

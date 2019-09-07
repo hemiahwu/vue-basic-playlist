@@ -2,7 +2,10 @@
 new Vue({
   el: '#vue-app', // element
   data() {
-    return {};
+    return {
+      name: '',
+      age: 32
+    };
   },
   methods: {
     logName() {
