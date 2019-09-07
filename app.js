@@ -8,11 +8,12 @@ new Vue({
     };
   },
   methods: {
-    logName() {
-      console.log('正在输入名字...');
+    getName() {
+      // console.log(this.$refs.name.value);
+      this.name = this.$refs.name.value;
     },
-    logAge() {
-      console.log('正在输入年龄...');
+    getAge() {
+      this.age = this.$refs.age.value;
     }
   }
 });

@@ -10,13 +10,13 @@
   </head>
   <body>
     <div id="vue-app">
-      <h1>双向数据绑定 input / select / textarea</h1>
+      <h1>ref</h1>
       <label>姓名</label>
-      <input type="text" v-model.lazy="name" />
+      <input type="text" ref="name" @keyup="getName" />
       <span>{{ name }}</span>
 
       <label>年龄</label>
-      <input type="text" v-model="age" />
+      <input type="text" ref="age" @keyup="getAge" />
       <span>{{ age }}</span>
     </div>
   </body>
