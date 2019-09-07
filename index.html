@@ -6,23 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <link rel="stylesheet" href="styles.css" />
-    <title>Vue CDN DEMO</title>
+    <title>Vue CDN</title>
   </head>
   <body>
-    <div id="vue-app">
-      <!-- bag image -->
-      <div id="bag" :class="{burst:ended}"></div>
-
-      <!-- bag health -->
-      <div id="bag-health">
-        <div :style="{width: health + '%'}"></div>
-      </div>
-
-      <!-- game control -->
-      <div id="controls">
-        <button @click="punch" v-show="!ended">Punch</button>
-        <button @click="restart">Restart</button>
-      </div>
+    <h1>多个Vue实例对象</h1>
+    <div id="vue-app-one">
+      <h2>{{ title }}</h2>
+      <p>{{ greet }}</p>
+    </div>
+    <div id="vue-app-two">
+      <h2>{{ title }}</h2>
+      <p>{{ greet }}</p>
+      <button @click="changeAppOneTitle">change app one title</button>
     </div>
   </body>
   <script src="app.js"></script>

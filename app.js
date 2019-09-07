@@ -1,23 +1,36 @@
 // 实例化vue对象
-new Vue({
-  el: '#vue-app', // element
+const one = new Vue({
+  el: '#vue-app-one', // element
   data() {
     return {
-      health: 100,
-      ended: false
+      title: 'this is app one!!'
+    };
+  },
+  methods: {},
+  computed: {
+    greet() {
+      return 'Hello 米修在线';
+    }
+  }
+});
+
+const two = new Vue({
+  el: '#vue-app-two', // element
+  data() {
+    return {
+      title: 'this is app two'
     };
   },
   methods: {
-    punch() {
-      this.health -= 10;
-      if (this.health <= 0) {
-        this.ended = true;
-      }
-    },
-    restart() {
-      this.health = 100;
-      this.ended = false;
+    changeAppOneTitle() {
+      one.title = '这是APP one的title';
     }
   },
-  computed: {}
+  computed: {
+    greet() {
+      return 'Hello 米斯特吴';
+    }
+  }
 });
+
+two.title = '这是app two的title内容';
