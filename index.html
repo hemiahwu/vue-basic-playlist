@@ -11,13 +11,14 @@
   <body>
     <h1>多个Vue实例对象</h1>
     <div id="vue-app-one">
-      <h2>{{ title }}</h2>
-      <p>{{ greet }}</p>
+      <h1>App One</h1>
+      <!-- <Greeting /> -->
+      <Greeting></Greeting>
     </div>
+
     <div id="vue-app-two">
-      <h2>{{ title }}</h2>
-      <p>{{ greet }}</p>
-      <button @click="changeAppOneTitle">change app one title</button>
+      <h1>App Two</h1>
+      <Greeting />
     </div>
   </body>
   <script src="app.js"></script>
