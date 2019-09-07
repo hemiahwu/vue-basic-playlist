@@ -11,21 +11,11 @@
   <body>
     <div id="vue-app">
       <h1>Events</h1>
-      <!-- <button @click="age++">add a year</button>
-      <button v-on:click="age--">subtract a year</button> -->
-      <button @click.once="add(1)">add a year</button>
-      <button v-on:click="subtract(1)">subtract a year</button>
-      <button @dblclick="add(10)">add 10 year</button>
-      <button v-on:dblclick="subtract(10)">subtract 10 year</button>
-      <p>我的年龄是: {{ age }}</p>
+      <label>姓名</label>
+      <input type="text" v-on:keydown.enter="logName" />
 
-      <!-- mousemove event -->
-      <div id="canvas" v-on:mousemove="updateXY">{{ x }} , {{ y }}</div>
-
-      <!-- 事件修饰符 -->
-      <p>
-        <a @click.prevent="handleClick" href="http://www.baidu.com">百度</a>
-      </p>
+      <label>年龄</label>
+      <input type="text" v-on:keyup.alt.enter="logAge" />
     </div>
   </body>
   <script src="app.js"></script>
