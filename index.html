@@ -6,44 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <link rel="stylesheet" href="styles.css" />
-    <title>Vue CDN</title>
+    <title>Vue CDN DEMO</title>
   </head>
   <body>
     <div id="vue-app">
-      <h1>v-for指令</h1>
-      <!-- {{ characters[0] }}
-      {{ characters[1] }}
-      {{ characters[2] }}
-      {{ characters[3] }} -->
-      <!-- <ul>
-        <li v-for="mrChatacter in characters">
-          {{ mrChatacter }}
-        </li>
-      </ul> -->
+      <!-- bag image -->
+      <div id="bag" :class="{burst:ended}"></div>
 
-      <!-- <ul>
-        <li v-for="(mrChatacter,mrI) in characters">
-          {{ mrI }} . {{ mrChatacter }}
-        </li>
-      </ul> -->
+      <!-- bag health -->
+      <div id="bag-health">
+        <div :style="{width: health + '%'}"></div>
+      </div>
 
-      <!-- <ul>
-        <li v-for="(user,index) in users">
-          {{ index }} . {{ user.name }} {{ user.age }}
-        </li>
-      </ul> -->
-
-      <!-- <template v-for="(user,index) in users">
-        <h3>{{ index }} - {{ user.name }}</h3>
-        <p>age - {{ user.age }}</p>
-      </template> -->
-
-      <!-- 遍历对象 -->
-      <template v-for="(user,index) in users">
-        <div v-for="(val,key) in user">
-          <p>{{ key }} - {{ val }}</p>
-        </div>
-      </template>
+      <!-- game control -->
+      <div id="controls">
+        <button @click="punch" v-show="!ended">Punch</button>
+        <button @click="restart">Restart</button>
+      </div>
     </div>
   </body>
   <script src="app.js"></script>
