@@ -3,29 +3,17 @@ new Vue({
   el: '#vue-app', // element
   data() {
     return {
-      a: 0,
-      b: 0,
-      age: 32
+      mrChangeColor: false,
+      mrChangeLength: false
     };
   },
-  methods: {
-    // addToA() {
-    //   console.log('addToA');
-    //   return this.a + this.age;
-    // },
-    // addToB() {
-    //   console.log('addToB');
-    //   return this.b + this.age;
-    // }
-  },
+  methods: {},
   computed: {
-    addToA() {
-      console.log('addToA');
-      return this.a + this.age;
-    },
-    addToB() {
-      console.log('addToB');
-      return this.b + this.age;
+    compClasses() {
+      return {
+        changeColor: this.mrChangeColor,
+        changeLength: this.mrChangeLength
+      };
     }
   }
 });

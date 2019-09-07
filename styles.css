@@ -1,6 +1,16 @@
-#canvas {
-  width: 600px;
-  padding: 200px 20px;
-  text-align: center;
-  border: 1px solid #333;
+span {
+  background: red;
+  display: inline-block;
+  padding: 10px;
+  color: #fff;
+  margin: 10px 0;
+}
+
+.changeColor span {
+  background: green;
+}
+
+.changeLength span:after {
+  content: '米斯特吴';
+  margin-left: 10px;
 }

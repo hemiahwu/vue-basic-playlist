@@ -10,20 +10,22 @@
   </head>
   <body>
     <div id="vue-app">
-      <h1>computed 计算属性</h1>
+      <h1>动态绑定样式 两种方式</h1>
 
-      <button @click="a++">Add to A</button>
-      <button @click="b++">Add to B</button>
-      <p>A - {{ a }}</p>
-      <p>B - {{ b }}</p>
+      <!-- <h2>示例1 属性绑定</h2>
+      <div
+        @click="mrChangeColor = !mrChangeColor"
+        v-bind:class="{changeColor:mrChangeColor}"
+      >
+        <span>Hello</span>
+      </div> -->
 
-      <!-- methods -->
-      <!-- <p>Age + A = {{ addToA() }}</p>
-      <p>Age + B = {{ addToB() }}</p> -->
-
-      <!-- computed -->
-      <p>Age + A = {{ addToA }}</p>
-      <p>Age + B = {{ addToB }}</p>
+      <h2>示例2 计算属性绑定</h2>
+      <button @click="mrChangeColor = !mrChangeColor">ChangeColor</button>
+      <button @click="mrChangeLength = !mrChangeLength">ChangeLength</button>
+      <div v-bind:class="compClasses">
+        <span>Hello</span>
+      </div>
     </div>
   </body>
   <script src="app.js"></script>
