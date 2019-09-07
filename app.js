@@ -3,25 +3,29 @@ new Vue({
   el: '#vue-app', // element
   data() {
     return {
-      name: '',
+      a: 0,
+      b: 0,
       age: 32
     };
   },
   methods: {
-    getName() {
-      // console.log(this.$refs.name.value);
-      this.name = this.$refs.name.value;
-    },
-    getAge() {
-      this.age = this.$refs.age.value;
-    }
+    // addToA() {
+    //   console.log('addToA');
+    //   return this.a + this.age;
+    // },
+    // addToB() {
+    //   console.log('addToB');
+    //   return this.b + this.age;
+    // }
   },
-  watch: {
-    name(val, oldVal) {
-      console.log(val, oldVal);
+  computed: {
+    addToA() {
+      console.log('addToA');
+      return this.a + this.age;
     },
-    age(val, oldVal) {
-      console.log(val, oldVal);
+    addToB() {
+      console.log('addToB');
+      return this.b + this.age;
     }
   }
 });
