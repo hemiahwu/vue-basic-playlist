@@ -3,17 +3,10 @@ new Vue({
   el: '#vue-app', // element
   data() {
     return {
-      mrChangeColor: false,
-      mrChangeLength: false
+      error: false,
+      success: false
     };
   },
   methods: {},
-  computed: {
-    compClasses() {
-      return {
-        changeColor: this.mrChangeColor,
-        changeLength: this.mrChangeLength
-      };
-    }
-  }
+  computed: {}
 });
