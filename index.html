@@ -9,16 +9,20 @@
     <title>Vue CDN</title>
   </head>
   <body>
-    <h1>多个Vue实例对象</h1>
-    <div id="vue-app-one">
-      <h1>App One</h1>
-      <!-- <Greeting /> -->
-      <Greeting></Greeting>
-    </div>
+    <h1>Fetch请求</h1>
+    <div id="vue-app">
+      <form @submit.prevent="onSubmit">
+        <input type="text" v-model="todo.title" />
+        <input type="checkbox" v-model="todo.completed" />
+        <input type="submit" value="提交" />
+      </form>
 
-    <div id="vue-app-two">
-      <h1>App Two</h1>
-      <Greeting />
+      <ul>
+        <li v-for="todo in todos">
+          <h1>{{ todo.title }}</h1>
+          <p v-if="todo.completed">{{ todo.completed }}</p>
+        </li>
+      </ul>
     </div>
   </body>
   <script src="app.js"></script>

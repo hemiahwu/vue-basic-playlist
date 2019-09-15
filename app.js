@@ -1,35 +1,41 @@
-// 全局变量
-let data = {
-  name: '米斯特吴',
-  wechat: '27732357'
-};
-
-// 创建全局组件
-Vue.component('Greeting', {
-  // html模板
-  template: `
-    <p>
-    这是全局组件,可以在任何实例的容器中使用
-    我的名字是: {{name}}, 我的微信是: {{wechat}}
-    <button @click='changeName'>改名</button>
-    </p>
-  `,
-  // 属性
+new Vue({
+  el: '#vue-app',
   data() {
-    return data;
+    return {
+      todos: [],
+      todo: {
+        title: '',
+        completed: false
+      }
+    };
   },
-  //  方法
+  mounted() {
+    // fetch api请求接口
+    fetch('http://jsonplaceholder.typicode.com/todos')
+      .then(res => {
+        return res.json();
+      })
+      .then(todos => {
+        this.todos = todos;
+      });
+  },
   methods: {
-    changeName() {
-      this.name = '米修在线';
+    onSubmit() {
+      // console.log(this.todo);
+      fetch('http://jsonplaceholder.typicode.com/todos', {
+        method: 'POST',
+        body: JSON.stringify(this.todo),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(res => {
+          return res.json();
+        })
+        .then(todo => {
+          // console.log(todo);
+          this.todos.unshift(todo);
+        });
     }
   }
-});
-
-const one = new Vue({
-  el: '#vue-app-one'
-});
-
-const two = new Vue({
-  el: '#vue-app-two'
 });
