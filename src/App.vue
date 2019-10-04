@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <!-- 3.调用组件 -->
+    <Users />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+// 1.局部调用组件
+import Users from "./components/Users";
 export default {
   name: "app",
+  // 2.注册组件
   components: {
-    HelloWorld
+    Users
   }
 };
 </script>
