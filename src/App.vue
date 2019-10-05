@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header :title="title" />
+    <Header @titleChange="updateTitle" :title="title" />
     <!-- 3.调用组件 -->
     <!-- 属性传值: 值有两种情况: 1.传值 2.传引用(对象 数组) -->
     <Users :users="users" />
@@ -37,6 +37,12 @@ export default {
     Header,
     Users,
     Footer
+  },
+  methods: {
+    updateTitle(updatedTitle) {
+      // console.log(updatedTitle);
+      this.title = updatedTitle;
+    }
   }
 };
 </script>

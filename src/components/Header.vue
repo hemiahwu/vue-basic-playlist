@@ -18,7 +18,9 @@ export default {
   },
   methods: {
     changeTitle() {
-      this.title = "米斯特吴修改了title值";
+      // this.title = "米斯特吴修改了title值";
+      // 注册事件  参数1: 事件名称  参数2...: 值
+      this.$emit("titleChange", "米斯特吴通过emit到app.vue修改title值");
     }
   }
 };
