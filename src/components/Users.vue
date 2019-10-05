@@ -1,5 +1,6 @@
 <template>
   <div class="users">
+    <h1>Users.vue</h1>
     <ul>
       <li v-for="(user,index) in users" :key="index">{{user}}</li>
     </ul>
@@ -16,5 +17,8 @@ export default {
 };
 </script>
 
-<style >
+<style scoped>
+h1 {
+  color: green;
+}
 </style>

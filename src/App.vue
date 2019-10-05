@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>App.vue</h1>
     <!-- 3.调用组件 -->
     <Users />
   </div>
@@ -17,5 +18,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+h1 {
+  color: purple;
+}
 </style>
