@@ -1,5 +1,6 @@
 <template>
   <div class="users">
+    <p>{{users}}</p>
     <ul>
       <li @click="user.show = !user.show" v-for="(user,index) in users" :key="index">
         <h2>{{user.name}}</h2>
@@ -11,18 +12,20 @@
 
 <script>
 export default {
+  // props: ["users","users2","users3"],
+  props: {
+    users: {
+      type: Array,
+      required: true
+    }
+  },
   data() {
-    return {
-      users: [
-        { name: "米斯特吴1", wechat: "27732357", show: false },
-        { name: "米斯特吴2", wechat: "27732357", show: false },
-        { name: "米斯特吴3", wechat: "27732357", show: false },
-        { name: "米斯特吴4", wechat: "27732357", show: false },
-        { name: "米斯特吴5", wechat: "27732357", show: false },
-        { name: "米斯特吴6", wechat: "27732357", show: false },
-        { name: "米斯特吴7", wechat: "27732357", show: false }
-      ]
-    };
+    return {};
+  },
+  methods: {
+    test() {
+      console.log(this.users);
+    }
   }
 };
 </script>
