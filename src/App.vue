@@ -1,19 +1,25 @@
 <template>
   <div id="app">
-    <h1>App.vue</h1>
+    <Header />
     <!-- 3.调用组件 -->
     <Users />
+    <Footer />
   </div>
 </template>
 
 <script>
-// 1.局部调用组件
+// 1.局部引用组件
+import Header from "./components/Header";
 import Users from "./components/Users";
+import Footer from "./components/Footer";
+
 export default {
   name: "app",
   // 2.注册组件
   components: {
-    Users
+    Header,
+    Users,
+    Footer
   }
 };
 </script>
