@@ -8,6 +8,9 @@ import App from './App.vue';
 // Vue.component('users', Users);
 Vue.config.productionTip = false;
 
+// event bus
+export const bus = new Vue();
+
 new Vue({
   render: h => h(App)
 }).$mount('#app');
