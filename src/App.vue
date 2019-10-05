@@ -1,9 +1,12 @@
 <template>
   <div id="app">
-    <Header />
+    <Header :title="title" />
     <!-- 3.调用组件 -->
+    <!-- 属性传值: 值有两种情况: 1.传值 2.传引用(对象 数组) -->
     <Users :users="users" />
-    <Footer />
+    <hr />
+    <Users :users="users" />
+    <Footer :title="title" />
   </div>
 </template>
 
@@ -25,7 +28,8 @@ export default {
         { name: "米斯特吴5", wechat: "27732357", show: false },
         { name: "米斯特吴6", wechat: "27732357", show: false },
         { name: "米斯特吴7", wechat: "27732357", show: false }
-      ]
+      ],
+      title: "Vue 米斯特吴"
     };
   },
   // 2.注册组件

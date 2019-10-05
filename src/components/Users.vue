@@ -1,12 +1,13 @@
 <template>
   <div class="users">
-    <p>{{users}}</p>
     <ul>
       <li @click="user.show = !user.show" v-for="(user,index) in users" :key="index">
         <h2>{{user.name}}</h2>
         <h3 v-show="user.show">{{user.wechat}}</h3>
       </li>
     </ul>
+    <!-- 传引用 -->
+    <button @click="deleteUser">deleteUser</button>
   </div>
 </template>
 
@@ -23,8 +24,8 @@ export default {
     return {};
   },
   methods: {
-    test() {
-      console.log(this.users);
+    deleteUser() {
+      this.users.pop();
     }
   }
 };
