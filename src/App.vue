@@ -1,30 +1,27 @@
 <template>
   <div id="app">
-    <FormHelper>
-      <div slot="title">
-        <h2>{{title}}</h2>
-        <p>Lorem ipsum dolor sit amet.</p>
-      </div>
-      <div slot="text">
-        <p>这个是文本内容</p>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis, ut?</p>
-      </div>
-    </FormHelper>
+    <keep-alive>
+      <component :is="component"></component>
+    </keep-alive>
+    <button @click="component = 'form-one'">show form one</button>
+    <button @click="component = 'form-two'">show form two</button>
   </div>
 </template>
 
 <script>
-import FormHelper from "./components/FormHelper";
+import FormOne from "./components/FormOne";
+import FormTwo from "./components/FormTwo";
 export default {
   name: "app",
   data() {
     return {
-      title: "这个是title"
+      component: "form-two"
     };
   },
   // 2.注册组件
   components: {
-    FormHelper
+    "form-one": FormOne,
+    "form-two": FormTwo
   },
   methods: {}
 };
